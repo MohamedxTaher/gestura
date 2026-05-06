@@ -165,6 +165,4 @@ Performance may vary depending on lighting conditions, webcam quality, hand visi
 - Kareem Mohamed Zaki
 - Mohamed Gaber Aboud
 
-## Acknowledgements
 
-Thanks to the OpenCV, MediaPipe, and Python communities for the tools and learning resources that make real-time computer vision projects accessible.
