@@ -1,94 +1,170 @@
 <div align="center">
-  <h1>🎮 نظام التحكم في الألعاب بحركات اليد <br> (Gesture-Based Game Control)</h1>
-  <p>تحكم في ألعاب الكمبيوتر بالاعتماد كلياً على حركات اليد باستخدام كاميرا الويب والرؤية الحاسوبية.</p>
+
+# Gestura – Real-Time Hand Gesture Game Controller
+
+A computer vision project that allows users to control games using real-time hand gestures through a webcam.
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-Video%20Processing-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Landmarks-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Project-0EA5E9?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-16A34A?style=for-the-badge)
+
 </div>
 
-<hr>
+## Demo
 
-## 📌 وصف المشروع
-هذا المشروع يعتمد على **الرؤية الحاسوبية (Computer Vision)** ليتيح للمستخدمين لعب ألعاب الكمبيوتر باستخدام حركات وإيماءات اليد في الوقت الفعلي، كبديل للوحة المفاتيح والماوس التقليديين.
+<p align="center">
+  <video src="assets/demo/gestura-demo.mp4" controls width="720"></video>
+</p>
 
-البرنامج يقرأ الفيديو المباشر من الكاميرا باستخدام `OpenCV` ومكتبة `MediaPipe` المتقدمة من جوجل لتتبع حركة المفاصل بدقة عالية وبدون تأخير (Zero Input Delay)، ومن ثم يترجم هذه الحركات إلى أوامر داخل اللعبة.
+<p align="center">
+  <a href="assets/demo/gestura-demo.mp4">Watch the Demo Video</a>
+</p>
 
----
+## Overview
 
-## 🚀 المميزات الرئيسية
-- 🕹️ **وضعين مختلفين للتحكم (Dual Control Modes):**
-  1. **وضع الكيبورد (Keyboard Mode):** مخصص لألعاب سباق السيارات مثل *Hill Climb Racing*.
-  2. **وضع السحب بالماوس (Mouse Swipe Mode):** مخصص لألعاب الركض اللانهائي مثل *Subway Surfers*.
-- ⚡ **أداء فائق السرعة:** يعمل في الوقت الفعلي باستخدام (Tasks API) لتتبع حركة 21 مفصل في اليد.
-- 📐 **يعتمد على الهندسة وليس الذكاء الاصطناعي الثقيل:** يستخدم الحسابات الهندسية لزوايا ومسافات الأصابع لضمان سرعة الاستجابة مهما كان الجهاز ضعيفاً.
-- 🔁 **التبديل اللحظي:** تبديل بين الأوضاع بسهولة بضغطة زر أثناء التشغيل.
+Gestura uses a webcam to detect hand landmarks in real time, recognizes predefined hand gestures, and converts them into keyboard or mouse actions for game control. It uses MediaPipe for hand landmark detection, OpenCV for camera processing, and a rule-based gesture classification/control layer for translating gestures into actions.
 
----
+**Suggested GitHub description:** Real-time webcam hand gesture controller for games using OpenCV, MediaPipe, and Python.
 
-## 🎮 أوضاع اللعب وطريقة التحكم
+**Suggested GitHub topics:** `computer-vision`, `mediapipe`, `opencv`, `hand-tracking`, `gesture-recognition`, `python`, `game-control`, `human-computer-interaction`
 
-### 1️⃣ وضع الكيبورد (Hill Climb Racing Mode)
-*هذا هو الوضع الافتراضي عند تشغيل البرنامج.*
+## Key Features
 
-| حركة اليد | الفعل في اللعبة | الزر المُحاكى (الكيبورد) |
-|-----------|-----------------|-------------------------|
-| **إصبع واحد (السبابة)** | زيادة السرعة (تسارع للأمام) | `السهم الأيمن (Right)` |
-| **إصبعين معاً (علامة النصر)**| التوقف / الرجوع للخلف | `السهم الأيسر (Left)` |
-| **قبضة اليد مغلقة تماماً** | فرامل (Handbrake) | `المسافة (Spacebar)` |
-| **راحة اليد المفرودة** | التوازن للأعلى في الهواء | `السهم لأعلى (Up)` |
-| **3 أصابع لأعلى** | التوازن للأسفل في الهواء | `السهم لأسفل (Down)` |
+- Real-time hand tracking through a webcam
+- Rule-based gesture recognition for the control layer
+- Keyboard control mode for game actions
+- Mouse swipe control mode for directional swipe games
+- Game interaction using hand gestures
+- Lightweight Python implementation
+- Modular project structure
 
-### 2️⃣ وضع السحب (Subway Surfers Mode)
-*اضغط على زر `m` للتبديل إلى هذا الوضع.*
+## How It Works
 
-يعتمد هذا الوضع على **حركة القرصة (Pinch)** بين الإبهام والسبابة، كأنك تمسك الشاشة وتسحبها.
+1. Webcam captures video frames.
+2. OpenCV processes the camera feed.
+3. MediaPipe detects hand landmarks.
+4. Rule-based logic recognizes gestures.
+5. Pynput converts gestures into keyboard or mouse actions.
+6. The game receives the simulated input.
 
-| حركة اليد | الفعل في اللعبة | الأكشن المُحاكى (الماوس) |
-|-----------|-----------------|------------------------|
-| **السبابة تلمس الإبهام (Pinch)** | الاستعداد للسحب | `Mouse Left Click Down` |
-| **قرصة + تحريك اليد لليمين** | الانتقال يميناً | `Swipe Right` |
-| **قرصة + تحريك اليد لليسار** | الانتقال يساراً | `Swipe Left` |
-| **قرصة + تحريك اليد للأعلى** | القفز (Jump) | `Swipe Up` |
-| **قرصة + تحريك اليد للأسفل** | التدحرج (Roll) | `Swipe Down` |
-| **إفلات القرصة** | إنهاء الحركة | `Mouse Left Click Up` |
+## Gesture Mapping
 
----
+| Gesture | Mode | Action |
+|---|---|---|
+| Index Finger | Keyboard Mode | Right Arrow / Move Right |
+| Peace Sign | Keyboard Mode | Left Arrow / Move Left |
+| Fist | Keyboard Mode | Space / Brake |
+| Open Palm | Keyboard Mode | Up Arrow |
+| Three Fingers | Keyboard Mode | Down Arrow |
+| Pinch + Move Right | Swipe Mode | Swipe Right |
+| Pinch + Move Left | Swipe Mode | Swipe Left |
+| Pinch + Move Up | Swipe Mode | Jump / Swipe Up |
+| Pinch + Move Down | Swipe Mode | Roll / Swipe Down |
 
-## 🛠️ التقنيات المستخدمة
-- **Python 3.11:** لغة البرمجة الأساسية.
-- **OpenCV (cv2):** لالتقاط ومعالجة الفيديو من الكاميرا.
-- **Google MediaPipe:** لاكتشاف اليد وتتبع المفاصل في الوقت الفعلي.
-- **Pynput:** لمحاكاة ضغطات أزرار الكيبورد وحركات الماوس في الويندوز.
+## Tech Stack
 
----
+| Technology | Role |
+|---|---|
+| Python | Main programming language |
+| OpenCV | Webcam capture and frame processing |
+| MediaPipe | Real-time hand landmark detection |
+| Pynput | Keyboard and mouse input simulation |
+| NumPy | Numerical calculations and array operations |
 
-## ⚙️ طريقة التثبيت والتشغيل
+## Project Structure
 
-### التثبيت لأول مرة
-1. قُم بنسخ المستودع (Clone) إلى جهازك.
-2. شغل ملف `install_env.bat` لتنزيل **Python 3.11** (إذا لم يكن مثبتاً) وتثبيت جميع المكتبات المطلوبة أوتوماتيكياً.
-3. انتظر حتى تظهر لك رسالة اكتمال التثبيت.
-
-### التشغيل
-1. قُم بتشغيل ملف **`run.bat`**.
-2. ستفتح كاميرا الويب وستظهر شاشة تتبع اليد.
-3. افتح اللعبة التي تريدها.
-4. **للتبديل بين الأوضاع:** اضغط على حرف `m` في الكيبورد أثناء تفعيل شاشة الكاميرا.
-5. **للخروج:** اضغط على حرف `q`.
-
----
-
-## 📂 هيكل المشروع
 ```text
-📦 HillClimbGestureControl
- ┣ 📂 config              # ملفات إعدادات النظام (Settings و Gestures)
- ┣ 📂 src                 # الكود المصدري
- ┃ ┣ 📂 utils             # أدوات مساعدة للحسابات الهندسية وتسجيل اللوجز
- ┃ ┣ 📜 camera.py         # التعامل مع كاميرا الويب
- ┃ ┣ 📜 hand_detector.py  # كشف وتتبع مفاصل اليد (MediaPipe)
- ┃ ┣ 📜 gesture_recognizer.py     # معالج إيماءات الكيبورد
- ┃ ┣ 📜 pinch_swipe_recognizer.py # معالج إيماءات السحب والقرصة
- ┃ ┣ 📜 key_controller.py         # محاكي الكيبورد
- ┃ ┣ 📜 mouse_controller.py       # محاكي الماوس
- ┃ ┗ 📜 main.py           # المجمع الرئيسي لتشغيل البرنامج
- ┣ 📜 install_env.bat     # سكربت الإعداد التلقائي
- ┣ 📜 run.bat             # سكربت تشغيل البرنامج
- ┗ 📜 requirements.txt    # المكتبات المطلوبة
+gestura/
+|-- assets/
+|   `-- demo/
+|       `-- gestura-demo.mp4
+|-- config/
+|   |-- settings.json
+|   `-- gestures_mapping.json
+|-- docs/
+|   |-- README.md
+|   |-- TECHNICAL_REPORT.md
+|   `-- USER_GUIDE.md
+|-- src/
+|   |-- main.py
+|   |-- gesture_recognizer.py
+|   |-- pinch_swipe_recognizer.py
+|   |-- key_controller.py
+|   `-- mouse_controller.py
+|-- tests/
+|-- requirements.txt
+|-- run.bat
+|-- run.sh
+`-- README.md
 ```
+
+## Installation
+
+```bash
+git clone https://github.com/MohamedxTaher/gestura.git
+cd gestura
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the application from the project root:
+
+```bash
+python -m src.main
+```
+
+You can also use the included launch scripts:
+
+```bash
+# Windows
+run.bat
+
+# macOS/Linux
+bash run.sh
+```
+
+During runtime:
+
+| Key | Action |
+|---|---|
+| `m` | Toggle between keyboard mode and swipe mode |
+| `r` | Reset runtime statistics |
+| `q` | Quit the application |
+
+## Use Cases
+
+- Gesture-based game control
+- Human-computer interaction
+- Computer vision learning project
+- Touchless control experiments
+- Accessibility-focused interaction prototype
+
+## Limitations
+
+Performance may vary depending on lighting conditions, webcam quality, hand visibility, and background complexity. The gesture classification layer is rule-based, so it depends on predefined gestures and clear hand poses.
+
+## Future Improvements
+
+- Add more gestures
+- Improve gesture smoothing
+- Add GUI settings
+- Add calibration screen
+- Support more games
+- Add custom gesture mapping
+
+## Team Members
+
+- Mohamed Taher El-Refaey
+- Mohamed Hassan El-Kassas
+- Ziad Mohamed Refaey
+- Ahmed Youssef Abdelhamid
+- Ahmed Hany Khairy
+- Kareem Mohamed Zaki
+- Mohamed Gaber Aboud
+
+## Acknowledgements
+
+Thanks to the OpenCV, MediaPipe, and Python communities for the tools and learning resources that make real-time computer vision projects accessible.
