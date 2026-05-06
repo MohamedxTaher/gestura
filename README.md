@@ -34,6 +34,15 @@ A computer vision project that allows users to control games using real-time han
   <a href="assets/poster/gestura-poster.png">View Full Poster</a>
 </p>
 
+## Presentation Website
+
+A premium interactive website was created for the university project showcase.
+
+- [Open Presentation Website](presentation/index.html)
+- [Demo Video](presentation/assets/media/gestura-demo.mp4)
+- [Project Poster](presentation/assets/poster/gestura-poster.png)
+- [Gesture Guide](presentation/assets/gestures/gesture-guide.svg)
+
 ## Overview
 
 Gestura uses a webcam to detect hand landmarks in real time, recognizes predefined hand gestures, and converts them into keyboard or mouse actions for game control. It uses MediaPipe for hand landmark detection, OpenCV for camera processing, and a rule-based gesture classification/control layer for translating gestures into actions.

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestura | Project Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="background-grid" aria-hidden="true"></div>
+
+  <main class="deck" aria-live="polite">
+    <section class="slide is-active" data-slide="hero">
+      <div class="slide-shell hero-shell">
+        <p class="eyebrow">Gayar Vision presents</p>
+        <h1>Gestura</h1>
+        <h2>Real-Time Hand Gesture Game Controller</h2>
+        <p class="hero-line">Control games with your hand. No keyboard. No controller. Just a webcam.</p>
+        <div class="hero-actions">
+          <button class="primary-action" data-action="start">Start Presentation</button>
+          <a class="ghost-action" href="assets/media/gestura-demo.mp4">Watch Demo Video</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="problem">
+      <div class="slide-shell">
+        <p class="eyebrow">The problem</p>
+        <h2>Why Gestura?</h2>
+        <p class="lead">Traditional game control depends on keyboards, mice, or controllers. Gestura explores a more natural and touchless way to interact with games using computer vision and hand gestures.</p>
+        <div class="card-grid three">
+          <article class="glass-card">
+            <span class="card-icon">01</span>
+            <h3>Touchless interaction</h3>
+            <p>Hand movement becomes the interface.</p>
+          </article>
+          <article class="glass-card">
+            <span class="card-icon">02</span>
+            <h3>Real-time response</h3>
+            <p>Actions are triggered while the camera stream is running.</p>
+          </article>
+          <article class="glass-card">
+            <span class="card-icon">03</span>
+            <h3>Human-computer interaction</h3>
+            <p>A practical showcase of natural input design.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="concept">
+      <div class="slide-shell">
+        <p class="eyebrow">The idea</p>
+        <h2>Project Concept</h2>
+        <p class="lead">Gestura reads the webcam feed, detects the user's hand, recognizes predefined gestures, and converts them into keyboard or mouse actions that games can understand.</p>
+        <div class="pipeline">
+          <div class="pipeline-node">Webcam</div>
+          <div class="pipeline-link"></div>
+          <div class="pipeline-node">Hand Detection</div>
+          <div class="pipeline-link"></div>
+          <div class="pipeline-node">Gesture Recognition</div>
+          <div class="pipeline-link"></div>
+          <div class="pipeline-node">Input Simulation</div>
+          <div class="pipeline-link"></div>
+          <div class="pipeline-node">Game Control</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="pipeline">
+      <div class="slide-shell">
+        <p class="eyebrow">System flow</p>
+        <h2>System Pipeline</h2>
+        <div class="timeline">
+          <article><span>1</span><p>Webcam captures live video frames.</p></article>
+          <article><span>2</span><p>OpenCV processes the camera stream.</p></article>
+          <article><span>3</span><p>MediaPipe detects hand landmarks.</p></article>
+          <article><span>4</span><p>Rule-based logic identifies gestures.</p></article>
+          <article><span>5</span><p>Pynput converts gestures into keyboard or mouse actions.</p></article>
+          <article><span>6</span><p>The game receives the simulated input.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="modes">
+      <div class="slide-shell">
+        <p class="eyebrow">Control design</p>
+        <h2>Gesture Control Modes</h2>
+        <div class="split-layout">
+          <article class="mode-card">
+            <span class="mode-label">Keyboard Mode</span>
+            <h3>Gesture to key control</h3>
+            <p>Uses hand gestures to simulate keyboard keys for games such as racing or movement-based games.</p>
+            <a class="inline-link" href="assets/gestures/gesture-guide.svg">View Gesture Guide</a>
+          </article>
+          <article class="mode-card">
+            <span class="mode-label">Mouse Swipe Mode</span>
+            <h3>Pinch to swipe control</h3>
+            <p>Uses pinch and movement direction to simulate swipe actions for games such as runner-style games.</p>
+            <a class="inline-link" href="assets/gestures/gesture-guide.svg">Open Mapping</a>
+          </article>
+        </div>
+        <img class="gesture-preview" src="assets/gestures/gesture-guide.svg" alt="Gestura gesture guide">
+      </div>
+    </section>
+
+    <section class="slide" data-slide="demo">
+      <div class="slide-shell media-shell">
+        <p class="eyebrow">Live proof</p>
+        <h2>Live Demo</h2>
+        <div class="video-frame">
+          <video id="demoVideo" src="assets/media/gestura-demo.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="media-actions">
+          <button class="primary-action compact" data-action="demo">Start Demo</button>
+          <a class="ghost-action compact" href="assets/media/gestura-demo.mp4">Watch Demo Video</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="poster">
+      <div class="slide-shell poster-shell">
+        <div class="poster-copy">
+          <p class="eyebrow">Visual summary</p>
+          <h2>Project Poster</h2>
+          <p class="lead">A clean overview of the project idea, pipeline, technologies, and demo flow.</p>
+          <a class="primary-action link-button" href="assets/poster/gestura-poster.png">View Full Poster</a>
+        </div>
+        <a class="poster-frame" href="assets/poster/gestura-poster.png" aria-label="Open full Gestura poster">
+          <img src="assets/poster/gestura-poster.png" alt="Gestura project poster">
+        </a>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="tech">
+      <div class="slide-shell">
+        <p class="eyebrow">Built with</p>
+        <h2>Technology Stack</h2>
+        <div class="tech-grid">
+          <article><strong>Python</strong><span>Main programming language</span></article>
+          <article><strong>OpenCV</strong><span>Camera stream processing</span></article>
+          <article><strong>MediaPipe</strong><span>Hand landmark detection</span></article>
+          <article><strong>Pynput</strong><span>Keyboard and mouse simulation</span></article>
+          <article><strong>NumPy</strong><span>Numerical calculations</span></article>
+          <article><strong>Webcam Processing</strong><span>Real-time visual input</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="impact">
+      <div class="slide-shell">
+        <p class="eyebrow">Project value</p>
+        <h2>Why This Project Matters</h2>
+        <div class="impact-list">
+          <article><span></span><p>Demonstrates real-time computer vision.</p></article>
+          <article><span></span><p>Applies human-computer interaction concepts.</p></article>
+          <article><span></span><p>Converts hand movement into practical game control.</p></article>
+          <article><span></span><p>Can be extended for accessibility and touchless control systems.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="team">
+      <div class="slide-shell team-shell">
+        <p class="eyebrow">Presentation team</p>
+        <h2>Team Presentation Pages</h2>
+        <article class="speaker-card">
+          <div>
+            <span id="memberCounter" class="member-counter">Member 1 / 7</span>
+            <h3 id="memberName">Mohamed Taher El-Refaey</h3>
+            <p id="memberRole" class="member-role">Project Introduction &amp; Main Idea</p>
+          </div>
+          <p id="memberSpeech" class="member-speech"></p>
+        </article>
+        <div class="member-dots" id="memberDots" aria-label="Team member selector"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="thanks">
+      <div class="slide-shell final-shell">
+        <p class="eyebrow">Presented by Gayar Vision</p>
+        <h2>Thank You</h2>
+        <p class="lead">Gestura shows how computer vision can turn simple hand movement into real interactive control.</p>
+        <div class="team-list">
+          <span>Mohamed Taher El-Refaey</span>
+          <span>Mohamed Hassan El-Kassas</span>
+          <span>Ziad Mohamed Refaey</span>
+          <span>Ahmed Youssef Abdelhamid</span>
+          <span>Ahmed Hany Khairy</span>
+          <span>Kareem Mohamed Zaki</span>
+          <span>Mohamed Gaber Aboud</span>
+        </div>
+        <button class="primary-action" data-action="restart">Restart Presentation</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="deck-controls" aria-label="Presentation controls">
+    <button class="nav-button" data-action="prev">Previous</button>
+    <div class="progress-wrap" aria-hidden="true">
+      <span id="slideCounter">01 / 11</span>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </div>
+    <button class="nav-button" data-action="next">Next</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
