@@ -31,7 +31,8 @@ Gestura is a computer vision project for controlling games with hand gestures th
 
 - The main README includes a demo video, badges, installation instructions, usage commands, project structure, limitations, and team members.
 - The documentation folder contains a user guide and a technical report.
-- The demo video is linked from `assets/demo/gestura-demo.mp4`.
+- The animated demo preview is embedded from `assets/demo/gestura-demo-preview.gif`.
+- The full demo video is linked from `assets/demo/gestura-demo.mp4`.
 
 ## Academic Value
 

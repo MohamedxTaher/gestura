@@ -45,6 +45,6 @@ bash run.sh
 
 ## Notes for Reviewers
 
-- The primary README includes the demo video, setup commands, gesture mapping, team list, and repository presentation notes.
+- The primary README includes an inline animated demo preview, the full demo video link, setup commands, gesture mapping, team list, and repository presentation notes.
 - Documentation wording is aligned with the current runtime behavior in `src/main.py`, `src/gesture_recognizer.py`, and `src/pinch_swipe_recognizer.py`.
 - Source code, tests, dependencies, and gesture behavior are intentionally unchanged by this documentation polish.

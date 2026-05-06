@@ -15,11 +15,13 @@ A computer vision project that allows users to control games using real-time han
 ## Demo
 
 <p align="center">
-  <video src="assets/demo/gestura-demo.mp4" controls width="720"></video>
+  <a href="https://github.com/MohamedxTaher/gestura/blob/main/assets/demo/gestura-demo.mp4">
+    <img src="assets/demo/gestura-demo-preview.gif" alt="Gestura demo preview" width="720">
+  </a>
 </p>
 
 <p align="center">
-  <a href="assets/demo/gestura-demo.mp4">Watch the Demo Video</a>
+  <a href="https://github.com/MohamedxTaher/gestura/blob/main/assets/demo/gestura-demo.mp4">Open the Full Demo Video on GitHub</a>
 </p>
 
 ## Overview
@@ -79,6 +81,7 @@ Gestura uses a webcam to detect hand landmarks in real time, recognizes predefin
 gestura/
 |-- assets/
 |   `-- demo/
+|       |-- gestura-demo-preview.gif
 |       `-- gestura-demo.mp4
 |-- config/
 |   |-- settings.json
