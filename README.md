@@ -24,6 +24,16 @@ A computer vision project that allows users to control games using real-time han
   <a href="https://github.com/MohamedxTaher/gestura/blob/main/assets/demo/gestura-demo.mp4">Open the Full Demo Video on GitHub</a>
 </p>
 
+## Project Poster
+
+<p align="center">
+  <img src="assets/poster/gestura-poster.png" alt="Gestura Project Poster" width="720">
+</p>
+
+<p align="center">
+  <a href="assets/poster/gestura-poster.png">View Full Poster</a>
+</p>
+
 ## Overview
 
 Gestura uses a webcam to detect hand landmarks in real time, recognizes predefined hand gestures, and converts them into keyboard or mouse actions for game control. It uses MediaPipe for hand landmark detection, OpenCV for camera processing, and a rule-based gesture classification/control layer for translating gestures into actions.
@@ -80,9 +90,11 @@ Gestura uses a webcam to detect hand landmarks in real time, recognizes predefin
 ```text
 gestura/
 |-- assets/
-|   `-- demo/
-|       |-- gestura-demo-preview.gif
-|       `-- gestura-demo.mp4
+|   |-- demo/
+|   |   |-- gestura-demo-preview.gif
+|   |   `-- gestura-demo.mp4
+|   `-- poster/
+|       `-- gestura-poster.png
 |-- config/
 |   |-- settings.json
 |   `-- gestures_mapping.json
